@@ -13,8 +13,7 @@ window.onload= function () {
 var validatePersonalNumber = function(input) {
     var input = document.getElementById('personnummer').value;
 
-    // Check valid length & form
-    if (!input) return false;
+    if (!input) alert ("Skriv personnummer");
 
     if (input.indexOf('-') == -1) {
         if (input.length === 10) {
@@ -23,15 +22,12 @@ var validatePersonalNumber = function(input) {
             input = input.slice(0, 8) + "-" + input.slice(8);
         }
     }
-    if (!input.match(/^(\d{2})(\d{2})(\d{2})\-(\d{4})|(\d{4})(\d{2})(\d{2})\-(\d{4})$/)) return false;
+    if (!input.match(/^(\d{2})(\d{2})(\d{2})\-(\d{4})|(\d{4})(\d{2})(\d{2})\-(\d{4})$/)) alert("Felaktigt format");
 
-    // Clean input
     input = input.replace('-', '');
     if (input.length == 12) {
         input = input.substring(2);
     }
-
-    // Declare variables
     var d = new Date(((!!RegExp.$1) ? RegExp.$1 : RegExp.$5), (((!!RegExp.$2) ? RegExp.$2 : RegExp.$6)-1), ((!!RegExp.$3) ? RegExp.$3 : RegExp.$7)),
         sum = 0,
         numdigits = input.length,
@@ -39,37 +35,39 @@ var validatePersonalNumber = function(input) {
         i,
         digit;
 
-    // Check valid date
-    if (Object.prototype.toString.call(d) !== "[object Date]" || isNaN(d.getTime())) return false;
-
-    // Check luhn algorithm
+    if (Object.prototype.toString.call(d) !== "[object Date]" || isNaN(d.getTime())) alert("Felaktigt datum");
+    
     for (i = 0; i < numdigits; i = i + 1) {
         digit = parseInt(input.charAt(i))
         if (i % 2 == parity) digit *= 2;
         if (digit > 9) digit -= 9;
         sum += digit;
     }
-    alert((sum % 10) == 0);
-    return (sum % 10) == 0;
+    if((sum % 10) == 0) {
+        alert("Korrekt personnummer");
+    }
+    else {
+        alert("Felaktigt personummer");
+    }
 
 }
 
 var valideraSkottar = function(input) {
     var input = document.getElementById('skottar').value;
     if (!input) {
-        alert(false);
+        alert("Skriv in år");
     }
     if (input % 400 == 0) {
-        alert(true);
+        alert("År " + input + " ÄR ett skottår");
     }
     else if( input % 100 == 0) {
-        alert(false);
+        alert("År " + input + " ÄR INTE ett skottår");
     }
     else if (input % 4 == 0) {
-        alert(true);
+        alert("År " + input + " ÄR ett skottår");
     }
     else {
-        alert(false);
+        alert("År " + input + " ÄR INTE ett skottår");
     }
 }
 
@@ -81,6 +79,6 @@ var valideraSiffersumma = function(input) {
         sum += parseInt(input[i]);
     }
 
-    alert(sum);
+    alert("Siffersumma är: " + sum);
 
 }

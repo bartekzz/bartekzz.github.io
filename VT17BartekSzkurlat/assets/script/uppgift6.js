@@ -34,11 +34,13 @@ var displayDigits = function() {
 var displayResult = function(sum) {
     var li = document.createElement('li');
     li.innerText = sum;
-    document.getElementById('results').appendChild(li);
+    var result = document.getElementById('results');
+    result.insertBefore(li, result.firstChild);
 }
 
 var clearDigits = function() {
     digits.length = 0;
+    final_digits.length = 0;
     document.getElementById('result').innerText = "0";
 }
 
@@ -87,7 +89,7 @@ var getSign = function() {
 
     if (x != "=") {
         if (digits[digits.length - 1] == "+" || digits[digits.length - 1] == "-") {
-            console.log("Invalid operation, cannot add " + x);
+            alert("Invalid operation, " + x + ". Add a digit.");
         } else {
             digits.push(x);
             console.log(digits);
@@ -104,6 +106,8 @@ var getSign = function() {
         console.log(sum);
         clearDigits();
         displayResult(sum);
+    } else {
+        alert("Invalid operation, " + x + ". Add a digit.");
     }
 
 }
