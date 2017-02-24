@@ -10,7 +10,7 @@ window.onload= function () {
     }
 
 }
-var validatePersonalNumber = function(input) {
+var validatePersonalNumber = function() {
     var input = document.getElementById('personnummer').value;
 
     if (!input) alert ("Skriv personnummer");
@@ -36,7 +36,7 @@ var validatePersonalNumber = function(input) {
         digit;
 
     if (Object.prototype.toString.call(d) !== "[object Date]" || isNaN(d.getTime())) alert("Felaktigt datum");
-    
+
     for (i = 0; i < numdigits; i = i + 1) {
         digit = parseInt(input.charAt(i))
         if (i % 2 == parity) digit *= 2;
@@ -52,7 +52,7 @@ var validatePersonalNumber = function(input) {
 
 }
 
-var valideraSkottar = function(input) {
+var valideraSkottar = function() {
     var input = document.getElementById('skottar').value;
     if (!input) {
         alert("Skriv in år");
@@ -71,7 +71,7 @@ var valideraSkottar = function(input) {
     }
 }
 
-var valideraSiffersumma = function(input) {
+var valideraSiffersumma = function() {
     var input = document.getElementById('siffersumma').value;
     var sum = 0;
 
