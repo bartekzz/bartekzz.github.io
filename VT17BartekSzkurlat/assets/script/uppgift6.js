@@ -29,6 +29,7 @@ var displayDigits = function() {
         output_digits += digits[i];
     }
     document.getElementById('result').innerText = output_digits;
+    return output_digits;
 }
 
 var displayResult = function(sum) {
@@ -104,8 +105,8 @@ var getSign = function() {
             console.log("i: " + i);
         }
         console.log(sum);
+        displayResult(displayDigits() + "=" + sum);
         clearDigits();
-        displayResult(sum);
     } else {
         alert("Invalid operation, " + x + ". Add a digit.");
     }
