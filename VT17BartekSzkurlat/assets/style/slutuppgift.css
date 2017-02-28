@@ -1,0 +1,68 @@
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+}
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    color: gray;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: yellow;
+}
+
+header {
+    padding: 0 3%;
+    margin: 1% 0;
+    width: 76%;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    float: right;
+}
+
+aside {
+    background-color: aliceblue;
+    margin: 1% 1%;
+    padding: 3% 3%;
+    width: 20%;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+}
+
+main {
+    padding: 0 3%;
+    margin: 1% 0;
+    width: 76%;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    float: left;
+    clear: right;
+}
+
+section {
+    padding: 0 3%;
+    margin: 1% 0;
+    width: 76%;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    float: right;
+    clear: right;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    aside {
+        width: 100%;
+    }
+}
