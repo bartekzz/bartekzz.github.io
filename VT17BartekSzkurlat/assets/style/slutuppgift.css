@@ -2,11 +2,13 @@
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: left;
+    margin: 0;
 }
 .rating > span {
     display: inline-block;
     position: relative;
     width: 1.1em;
+    font-size: 2em;
     color: gray;
 }
 
@@ -17,51 +19,130 @@
     color: yellow;
 }
 
+body {
+    margin: 0;
+    background-image: url("../resource/furley_bg.png");
+    background-repeat: repeat;
+}
+
+.fullwidth {
+    background-image: url("../resource/tortilla-de-patatas.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid white;
+}
+
+header h1 {
+    padding: 0;
+    margin: 0;
+    color: rgba(256, 256, 256, 0.9);
+    font-size: 3em;
+}
+
+header p {
+    padding: 0;
+    margin: 0;
+    color: rgba(256, 256, 256, 0.9);
+    font-size: 1.8em;
+}
+
 header {
-    padding: 0 3%;
-    margin: 1% 0;
-    width: 76%;
+    position: relative;
+    margin: 168px 0;
     box-sizing: border-box;
-    background-color: white;
-    display: inline-block;
-    float: right;
+    display: block;
+    text-align: center;
+}
+
+.padding {
+    margin: 0;
+    padding: 0 10%;
+    color: #333333;
+}
+
+main.first {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: block;
 }
 
 aside {
-    background-color: aliceblue;
-    margin: 1% 1%;
-    padding: 3% 3%;
+    color: #333333;
+    margin: 0;
+    padding: 1% 3%;
     width: 20%;
     box-sizing: border-box;
     display: inline-block;
     float: left;
 }
 
-main {
-    padding: 0 3%;
-    margin: 1% 0;
-    width: 76%;
+article {
+    color: #333333;
+    margin: 0;
+    padding: 1% 3%;
+    width: 80%;
     box-sizing: border-box;
-    background-color: white;
     display: inline-block;
     float: left;
     clear: right;
 }
 
-section {
-    padding: 0 3%;
-    margin: 1% 0;
-    width: 76%;
-    box-sizing: border-box;
-    background-color: white;
+article h3 {
+    margin: 0;
+    padding: 0;
+}
+
+article #status {
     display: inline-block;
-    float: right;
-    clear: right;
+}
+
+article #ratingStatus, #voteStatus {
+    margin-right: 4px;
+    float: left;
+}
+
+footer {
+    color: #333333;
+    margin: 0;
+    padding: 3% 3%;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    header {
+        position: relative;
+        margin: 50px 0 ;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+    }
+
+    header h1 {
+        padding: 0;
+        margin: 0;
+        color: rgba(256, 256, 256, 0.9);
+        font-size: 2em;
+    }
+
+    header p {
+        padding: 0;
+        margin: 0;
+        color: rgba(256, 256, 256, 0.9);
+        font-size: 1em;
+    }
+
+    .padding {
+        padding: 0 5%;
+    }
+
     aside {
         width: 100%;
     }
